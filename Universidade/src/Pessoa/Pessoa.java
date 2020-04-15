@@ -1,4 +1,4 @@
-package app.Pessoa;
+package Pessoa;
 
 public class Pessoa {
 
@@ -42,7 +42,12 @@ public class Pessoa {
 
     @Override
     public String toString (){
-        return "Nome: " + this.nome + "CPF: " + this.cpf.toUpperCase() + "Sexo: " + this.sexo.toUpperCase();
+        return "Nome: " +
+         this.nome + 
+        " CPF: " + 
+         this.cpf.toUpperCase() + 
+         " Sexo: " +
+          this.sexo.toUpperCase();
     }   
 
 

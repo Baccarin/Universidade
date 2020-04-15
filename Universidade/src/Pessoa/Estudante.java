@@ -1,4 +1,4 @@
-package app.Pessoa;
+package Pessoa;
 
 public class Estudante extends Pessoa {
     
@@ -43,7 +43,10 @@ public class Estudante extends Pessoa {
 
     @Override
     public String toString(){
-        return super.toString() + " Curso: " + this.curso + "Periodo: " + this.periodo + "Turno: " + this.turno;
+        return super.toString() +
+            " Curso: " + this.curso +
+            " Periodo: " + this.periodo +
+            " Turno: " + this.turno;
     }
 
 

@@ -1,4 +1,4 @@
-package app.Pessoa;
+package Pessoa;
 
 public class Visita extends Pessoa{
 
@@ -33,7 +33,11 @@ public class Visita extends Pessoa{
 
     @Override
     public String toString(){
-        return super.toString() + " Motivo: " + this.motivoVisita + "Urgencia: " + this.urgente;
+        return super.toString() + 
+        " Motivo: " +
+        this.motivoVisita + 
+        " Urgencia: " + 
+        this.urgente;
     }
 
 }
