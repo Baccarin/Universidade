@@ -6,10 +6,6 @@ public class Pessoa {
     private String cpf;
     private String sexo;
 
-    public Pessoa (){
-
-    }
-
     public Pessoa(String nome, String cpf, String sexo){
         this.nome = nome;
         this.cpf = cpf;

@@ -8,14 +8,8 @@ public class Professor extends Funcionario{
 
     private ArrayList<Disciplina> disciplinas;
 
-    public Professor(){
-        super();
-    }
-
     public Professor(String nome, String cpf, String sexo,Double salario){
-        super(nome,cpf,sexo,"Professor",salario);
-
-        
+        super(nome,cpf,sexo,"Professor",salario); 
     }
 
     public Professor(String nome, String cpf, String sexo,Double salario, ArrayList<Disciplina> disciplinas){

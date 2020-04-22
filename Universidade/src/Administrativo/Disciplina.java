@@ -11,10 +11,6 @@ public class Disciplina {
     private Integer duracao;
     private ArrayList<Estudante> alunos;
 
-    public Disciplina(){
-
-    }
-
     public Disciplina (String nome, Integer duracao){  
         this.nome = nome;
         this.duracao = duracao;

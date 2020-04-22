@@ -5,10 +5,6 @@ public class Visita extends Pessoa{
     private String motivoVisita;
     private Boolean urgente;
 
-    public Visita(){
-
-    }
-
     public Visita(String nome,String cpf, String sexo, String motivo, Boolean urgente){
         super(nome, cpf, sexo);
         this.motivoVisita = motivo;

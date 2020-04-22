@@ -1,20 +1,21 @@
 package Pessoa;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Estudante extends Pessoa {
     
     private String curso;
     private Integer periodo;
     private String turno;
-
-    public Estudante(){
-        super();
-    }
+    private Date dataMatricula ;
 
     public Estudante(String nome, String cpf, String sexo , String curso , Integer periodo, String turno){
         super(nome,cpf,sexo);
         this.curso = curso;
         this.periodo = periodo;
         this.turno = turno;
+        this.dataMatricula = new Date();
     }
 
     public String getCurso() {
@@ -41,12 +42,22 @@ public class Estudante extends Pessoa {
         this.turno = turno;
     }
 
+    public Date getDataMatricula() {
+        return this.dataMatricula;
+    }
+
+    public void setDataMatricula(Date dataMatricula) {
+        this.dataMatricula = dataMatricula;
+    }
+
     @Override
     public String toString(){
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
         return super.toString() +
             " Curso: " + this.curso +
             " Periodo: " + this.periodo +
-            " Turno: " + this.turno;
+            " Turno: " + this.turno +
+            " Data de matricula: " + formato.format(this.dataMatricula);
     }
 
 
