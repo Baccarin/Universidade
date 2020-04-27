@@ -1,7 +1,8 @@
 package Administrativo;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-
+import java.util.Date;
 import Pessoa.Estudante;
 
 public class Matricula {
@@ -10,6 +11,7 @@ public class Matricula {
     private Disciplina disciplina;
     private boolean aprovado = true;
     private ArrayList<Prova> provas;
+    private Date dataMatricula = new Date();
 
     public Matricula() {
     }
@@ -59,12 +61,18 @@ public class Matricula {
         this.provas = provas;
     }
 
+    public Date getDataMatricula() {
+        return this.dataMatricula;
+    }
+
     @Override
     public String toString() {
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
         return " Aluno: " + getAluno().getNome() +
             " Disciplina: " + getDisciplina().getNome() +
             " Aprovado: " + isAprovado() +
-            " Provas: " + getProvas() ;
+            " Provas: " + getProvas() +
+            " Data de matricula: " + formato.format(getDataMatricula());
     }
 
 
