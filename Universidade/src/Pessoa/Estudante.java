@@ -1,23 +1,25 @@
 package Pessoa;
 
+import Administrativo.Curso;
+
 public class Estudante extends Pessoa {
     
-    private String curso;
+    private Curso curso;
     private Integer periodo;
     private String turno;
 
-    public Estudante(String nome, String cpf, String sexo , String curso , Integer periodo, String turno){
+    public Estudante(String nome, String cpf, String sexo , Curso curso , Integer periodo, String turno){
         super(nome,cpf,sexo);
         this.curso = curso;
         this.periodo = periodo;
         this.turno = turno;
     }
 
-    public String getCurso() {
+    public Curso getCurso() {
         return this.curso;
     }
 
-    public void setCurso(String curso) {
+    public void setCurso(Curso curso) {
         this.curso = curso;
     }
 

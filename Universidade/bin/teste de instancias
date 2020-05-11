@@ -1,0 +1,45 @@
+       import Administrativo.Bloco;
+       import Administrativo.Curso;
+       import Administrativo.Disciplina;
+       import Administrativo.Estagio;
+       import Administrativo.Matricula;
+       import Administrativo.Prova;
+       import Administrativo.Sala;
+       import Pessoa.Estudante;
+       import Pessoa.Funcionario;
+       import Pessoa.Pessoa;
+       import Pessoa.Professor;
+       import Pessoa.Visita;
+        
+        
+        
+       Curso curso = new Curso("nome", 10, true);
+       Estudante estudante = new Estudante("NomeEstudante", "cpf", "sexo", curso, 2 , "turno");
+
+       Disciplina disc = new Disciplina("nome", 50);
+       Sala sala = new Sala(Bloco.B, "numero");
+       Estagio estagio = new Estagio(estudante," empresa", true, 500.00);
+       Prova prova = new Prova(estudante, disc, 10.00);
+       Matricula mat = new Matricula(estudante, disc);
+
+
+       Pessoa pessoa = new Pessoa("Nome", "CPF", "Masculino");
+       Funcionario funcionario = new Funcionario("nome", "cpf", "sexo", "cargo", 100.00);
+       Professor professor = new Professor("nome", "cpf", "sexo", 2000.00);
+       Visita visita = new Visita("nome", "cpf", "sexo", "motivo", true);
+
+
+       // Pessoas
+       System.out.println(professor.toString());
+       System.out.println(visita.toString());
+       System.out.println(funcionario.toString());
+       System.out.println(estudante.toString());
+       System.out.println(pessoa.toString());
+
+       //Administrativo
+       System.out.println(curso.toString());
+       System.out.println(disc.toString());
+       System.out.println(estagio.toString());
+       System.out.println(prova.toString());
+       System.out.println(sala.toString());
+       System.out.println(mat.toString());

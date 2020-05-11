@@ -36,4 +36,11 @@ public class Sala {
         this.ocupada = ocupada;
     }
 
+    @Override
+    public String toString(){
+        return "Bloco: " + this.bloco +
+                " Número: " + this.numero + 
+                " Ocupada: " + this.ocupada;
+    }
+
 }

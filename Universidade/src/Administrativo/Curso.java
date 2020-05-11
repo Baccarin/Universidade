@@ -9,6 +9,12 @@ public class Curso {
     private Boolean presencial = true;
     private ArrayList<Disciplina> disciplinas;
 
+    public Curso(String nome, Integer duracao, Boolean presencial){
+        this.nome = nome;
+        this.duracao = duracao;
+        this.presencial = presencial;
+    }
+
     public Curso(String nome, Integer duracao, Boolean presencial, ArrayList<Disciplina> disciplinas){
         this.nome = nome;
         this.duracao = duracao;

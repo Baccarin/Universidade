@@ -10,7 +10,7 @@ public class Matricula {
     private Estudante aluno;
     private Disciplina disciplina;
     private boolean aprovado = true;
-    private ArrayList<Prova> provas;
+    private ArrayList<Prova> provas = new ArrayList<>();
     private Date dataMatricula = new Date();
 
     public Matricula() {
@@ -38,15 +38,20 @@ public class Matricula {
     }
 
     
-    public boolean isAprovado() {
-        Double notaFinal = 0.00;
-        for (Prova prova : provas) {
-            notaFinal = notaFinal + prova.getNota();
+    public boolean getAprovado() {
+        if (this.provas.isEmpty()){
+            return false;
         }
-        if (notaFinal / provas.size() > 6){
-            return true;
+        else{
+            Double notaFinal = 0.00;
+            for (Prova prova : provas) {
+                notaFinal = notaFinal + prova.getNota();
+            }
+            if (notaFinal / provas.size() > 6){
+                return true;
+            }
+            return false;
         }
-        return false;
     }
 
     public void setAprovado(boolean aprovado) {
@@ -70,7 +75,7 @@ public class Matricula {
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
         return " Aluno: " + getAluno().getNome() +
             " Disciplina: " + getDisciplina().getNome() +
-            " Aprovado: " + isAprovado() +
+            " Aprovado: " + getAprovado() +
             " Provas: " + getProvas() +
             " Data de matricula: " + formato.format(getDataMatricula());
     }
