@@ -1,14 +1,19 @@
 package Pessoa;
 
 import Administrativo.Curso;
+import Administrativo.Turno;
 
 public class Estudante extends Pessoa {
     
     private Curso curso;
     private Integer periodo;
-    private String turno;
+    private Turno turno;
 
-    public Estudante(String nome, String cpf, String sexo , Curso curso , Integer periodo, String turno){
+    public Estudante(String nome, String cpf, String sexo){
+        super(nome,cpf,sexo);
+    }
+
+    public Estudante(String nome, String cpf, String sexo , Curso curso , Integer periodo, Turno turno){
         super(nome,cpf,sexo);
         this.curso = curso;
         this.periodo = periodo;
@@ -32,10 +37,10 @@ public class Estudante extends Pessoa {
     }
 
     public String getTurno() {
-        return this.turno;
+        return this.turno.name();
     }
 
-    public void setTurno(String turno) {
+    public void setTurno(Turno turno) {
         this.turno = turno;
     }
 

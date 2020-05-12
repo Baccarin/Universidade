@@ -1,9 +1,13 @@
 package Pessoa;
 
-public class Visita extends Pessoa{
+import java.util.Date;
+
+public class Visita extends Pessoa {
 
     private String motivoVisita;
     private Boolean urgente;
+    private Date dataVisita = new Date();
+
 
     public Visita(String nome,String cpf, String sexo, String motivo, Boolean urgente){
         super(nome, cpf, sexo);
@@ -25,6 +29,10 @@ public class Visita extends Pessoa{
 
     public void setUrgente(Boolean urgente) {
         this.urgente = urgente;
+    }
+
+    public Date getDataVisita() {
+        return this.dataVisita;
     }
 
     @Override
