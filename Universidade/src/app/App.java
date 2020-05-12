@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import Administrativo.Curso;
 import Administrativo.Disciplina;
+import Administrativo.Estagio;
 import Administrativo.Turno;
 import Administrativo.Universidade;
 import Pessoa.Estudante;
@@ -23,12 +24,16 @@ public class App {
         boolean continuaDisciplina = true;
         boolean cursoPresencial;
         boolean visitaUrgencia;
+        boolean estagioObrigatorio;
 
         while (continua) {
 
             System.out.println("Operação 1: adicionar um curso");
             System.out.println("Operação 2: adicionar um funcionário");
             System.out.println("Operação 3: registrar um visitante");
+            System.out.println("Operação 4: registrar um estudante");
+            System.out.println("Operação 5: registrar uma disciplina");
+            System.out.println("Operação 6: registrar um estágio");
 
             switch (sc.nextInt()) {
 
@@ -84,7 +89,8 @@ public class App {
                         Double salarioProfessor = sc.nextDouble();
                         Professor professor = new Professor(nomeProfessor, cpfProfessor, sexoProfessor,
                                 salarioProfessor);
-                        universidade.addFuncionario(professor);        
+                        universidade.addFuncionario(professor);
+                        System.out.println(professor.toString());
                         System.out.println("Esse professor ministra alguma disciplina (S/N)?");
                         if (sc.next().equals("S")) {
                             sc.nextLine();
@@ -100,7 +106,8 @@ public class App {
                                         if (nomeDisciplna.equals(cursoDisc.getNome())) {
                                             professor.addDisciplina(disc);
                                         } else {
-                                            System.out.println("Essa disciplina não existe. Deseja adicioná-la (S/N)? \n");
+                                            System.out.println(
+                                                    "Essa disciplina não existe. Deseja adicioná-la (S/N)? \n");
                                             if (sc.next().equals("S")) {
                                                 System.out.println("Digite o nome da disciplina.");
                                                 nomeDisciplna = sc.nextLine();
@@ -130,6 +137,7 @@ public class App {
                         Funcionario funcionario = new Funcionario(nomeFuncionario, cpfFuncionario, sexoFuncionario,
                                 cargoFuncionario, salarioFuncionario);
                         universidade.addFuncionario(funcionario);
+                        System.out.println(funcionario.toString());
                     }
 
                 case 3:
@@ -145,52 +153,95 @@ public class App {
                     System.out.println("A visita é urgente (S/N)?");
                     if (sc.next().equals("S")) {
                         visitaUrgencia = true;
-                    }else{
+                    } else {
                         visitaUrgencia = false;
                     }
-                    Visita visitante = new Visita(nomeVisitante, cpfVisitante, sexoVisitante, motivoVistia, visitaUrgencia);
+                    Visita visitante = new Visita(nomeVisitante, cpfVisitante, sexoVisitante, motivoVistia,
+                            visitaUrgencia);
                     universidade.addVisitante(visitante);
-                break;
-
+                    System.out.println(visitante.toString());
+                    break;
 
                 case 4:
-                sc.nextLine();
-                System.out.println("Digite o nome do estudante.");
-                String nomeEstudante = sc.nextLine();
-                System.out.println("Digite o cpf do estudante.");
-                String cpfEstudante = sc.nextLine();
-                System.out.println("Digite o sexo do estudante.");
-                String sexoEstudante = sc.nextLine();
-                System.out.println("Digite o curso do estudante.");
-                String estudanteCursoNome = sc.nextLine();
-                System.out.println("Digite o período do estudante.");
-                Integer periodoEstudante = sc.nextInt();
-                Estudante estudante = new Estudante(nomeEstudante, cpfEstudante, sexoEstudante);
-                estudante.setPeriodo(periodoEstudante);
-                System.out.println("Digite o turno do estudante (Manha,Tarde ou Noite).");
-                String turnoEstudante = sc.nextLine();
-                if (turnoEstudante.equals(Turno.Manha.toString())){
-                    estudante.setTurno(Turno.Manha);
-                }else if(turnoEstudante.equals(Turno.Noite.toString())){
-                    estudante.setTurno(Turno.Noite);
-                }else{
-                    estudante.setTurno(Turno.Tarde);
-                }
-                for (Curso cursoEstudante : universidade.getCursos()){
-                    if (cursoEstudante.getNome().equals(estudanteCursoNome)){
-                        estudante.setCurso(cursoEstudante);
+                    sc.nextLine();
+                    System.out.println("Digite o nome do estudante.");
+                    String nomeEstudante = sc.nextLine();
+                    System.out.println("Digite o cpf do estudante.");
+                    String cpfEstudante = sc.nextLine();
+                    System.out.println("Digite o sexo do estudante.");
+                    String sexoEstudante = sc.nextLine();
+                    System.out.println("Digite o curso do estudante.");
+                    String estudanteCursoNome = sc.nextLine();
+                    System.out.println("Digite o período do estudante.");
+                    Integer periodoEstudante = sc.nextInt();
+                    Estudante estudante = new Estudante(nomeEstudante, cpfEstudante, sexoEstudante);
+                    estudante.setPeriodo(periodoEstudante);
+                    sc.nextLine();
+                    System.out.println("Digite o turno do estudante (Manha,Tarde ou Noite).");
+                    String turnoEstudante = sc.nextLine();
+                    if (turnoEstudante.equals(Turno.Manha.toString())) {
+                        estudante.setTurno(Turno.Manha);
+                    } else if (turnoEstudante.equals(Turno.Noite.toString())) {
+                        estudante.setTurno(Turno.Noite);
+                    } else {
+                        estudante.setTurno(Turno.Tarde);
                     }
-                }
-                if (estudante.getCurso() == null){
-                    System.out.println("Aluno sem curso cadastrado");
-                }
+                    for (Curso cursoEstudante : universidade.getCursos()) {
+                        if (cursoEstudante.getNome().equals(estudanteCursoNome)) {
+                            estudante.setCurso(cursoEstudante);
+                        }
+                    }
+                    if (estudante.getCurso() == null) {
+                        System.out.println("Aluno sem curso cadastrado.");
+                    }
+                    System.out.println(estudante.toString());
+                    break;
+
+                case 5:
+                    sc.nextLine();
+                    System.out.println("Digite o nome da disciplina.");
+                    String nomeDisciplina = sc.nextLine();
+                    System.out.println("Digite a duração em horas dessa disciplna.");
+                    Integer horasDisciplina = sc.nextInt();
+                    Disciplina disciplina = new Disciplina(nomeDisciplina, horasDisciplina);
+                    System.out.println("Deseja cadastrar estudantes existentes nessa disciplina (S/N)?");
+                    if (sc.next().equals("S")) {
+                        System.out.println("Digite o nome do estudante a ser cadastrado.");
+                        nomeEstudante = sc.nextLine();
+                        for (Curso cursoEstudante : universidade.getCursos()) {
+                            disciplina.addAluno(cursoEstudante.procuraEstudante(universidade, nomeEstudante));
+                        }
+                    }
+                    break;
+
+                    case 6:
+                    sc.nextLine();
+                    System.out.println("Digite o nome do estudante.");
+                    nomeEstudante = sc.nextLine();
+                    for (Curso cursoEstagio : universidade.getCursos()){
+                        if(cursoEstagio.procuraEstudante(universidade, nomeEstudante) == null){
+                            System.out.println("Aluno não encontrado.");
+                        }else{
+                            System.out.println("Digite o nome da empresa.");
+                            String nomeEmpresa = sc.nextLine();
+                            System.out.println("Digite o salário.");
+                            Double salarioEstagio = sc.nextDouble();
+                            sc.nextLine();
+                            System.out.println("O estágio é obrigatório (S/N)?");
+                            if (sc.next().equals("S")) {
+                                estagioObrigatorio = true;
+                            }else{
+                                estagioObrigatorio = false;
+                            }
+                            Estagio estagio = new Estagio(cursoEstagio.procuraEstudante(universidade, nomeEstudante),nomeEmpresa,estagioObrigatorio,salarioEstagio); 
+                            System.out.println(estagio.toString());
+                        }
+                    }
 
 
-
-                break;
+                    break;
             }
-            
-                
+
         }
 
         sc.close();

@@ -46,6 +46,14 @@ public class Disciplina {
         this.alunos = alunos;
     }
 
+    public void addAluno(Estudante estudante){
+        this.alunos.add(estudante);
+    }
+
+    public void removeAluno(Estudante estudante){
+        this.alunos.remove(estudante);
+    }
+
     @Override
     public String toString(){
         return 
