@@ -7,7 +7,7 @@ public class Curso {
     private String nome;
     private Integer duracao;
     private Boolean presencial = true;
-    private ArrayList<Disciplina> disciplinas;
+    private ArrayList<Disciplina> disciplinas = new ArrayList<>();
 
     public Curso(String nome, Integer duracao, Boolean presencial){
         this.nome = nome;
@@ -52,6 +52,14 @@ public class Curso {
 
     public void setDisciplinas(ArrayList<Disciplina> disciplinas) {
         this.disciplinas = disciplinas;
+    }
+
+    public void addDisciplina(Disciplina disciplina){
+        this.disciplinas.add(disciplina);
+    }
+
+    public void removeDisciplina(Disciplina disciplina){
+        this.disciplinas.remove(disciplina);
     }
 
     @Override

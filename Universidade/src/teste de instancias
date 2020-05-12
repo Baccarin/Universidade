@@ -12,7 +12,7 @@
        import Pessoa.Visita;
         
         
-        
+       Universidade universidade = new Universidade("nome");
        Curso curso = new Curso("nome", 10, true);
        Estudante estudante = new Estudante("NomeEstudante", "cpf", "sexo", curso, 2 , "turno");
 
@@ -37,6 +37,7 @@
        System.out.println(pessoa.toString());
 
        //Administrativo
+       System.out.println(universidade.toString());
        System.out.println(curso.toString());
        System.out.println(disc.toString());
        System.out.println(estagio.toString());

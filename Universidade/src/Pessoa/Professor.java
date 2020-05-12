@@ -6,7 +6,7 @@ import Administrativo.Disciplina;
 
 public class Professor extends Funcionario{
 
-    private ArrayList<Disciplina> disciplinas;
+    private ArrayList<Disciplina> disciplinas = new ArrayList<>();
 
     public Professor(String nome, String cpf, String sexo,Double salario){
         super(nome,cpf,sexo,"Professor",salario); 
@@ -24,6 +24,14 @@ public class Professor extends Funcionario{
 
     public void setDisciplinas(ArrayList<Disciplina> disciplinas) {
         this.disciplinas = disciplinas;
+    }
+
+    public void addDisciplina(Disciplina disciplina){
+        this.disciplinas.add(disciplina);
+    }
+
+    public void removeDisciplina(Disciplina disciplina){
+        this.disciplinas.remove(disciplina);
     }
 
 
