@@ -40,7 +40,7 @@ public class App {
                 case 1:
                     sc.nextLine();
                     System.out.println("Digite o nome do curso.");
-                    String nome = sc.nextLine();
+                    String nomeCurso = sc.nextLine();
                     System.out.println("Digite a duração do curso.");
                     int duracao = sc.nextInt();
                     System.out.println("O curso é presencial?");
@@ -49,7 +49,7 @@ public class App {
                     } else {
                         cursoPresencial = false;
                     }
-                    Curso curso = new Curso(nome, duracao, cursoPresencial);
+                    Curso curso = new Curso(nomeCurso, duracao, cursoPresencial);
                     universidade.addCurso(curso);
                     System.out.println(curso.toString());
 
@@ -237,9 +237,8 @@ public class App {
                             System.out.println(estagio.toString());
                         }
                     }
-
-
                     break;
+
             }
 
         }
