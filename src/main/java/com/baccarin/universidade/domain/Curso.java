@@ -1,6 +1,9 @@
 package com.baccarin.universidade.domain;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import com.baccarin.universidade.vo.CursoVO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -35,6 +38,12 @@ public class Curso {
 	@ManyToMany
 	@JoinTable(name = "curso_disciplina", joinColumns = { @JoinColumn(name = "curso_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "disciplina_id") })
-	private List<Disciplina> disciplinas;
+	private List<Disciplina> disciplinas = new ArrayList<>();
+
+	public Curso(CursoVO vo) {
+		this.id = vo.getId();
+		this.nome = vo.getNome();
+		this.duracao = vo.getDuracao();
+	}
 
 }
