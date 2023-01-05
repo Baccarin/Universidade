@@ -36,7 +36,7 @@ public class Curso {
 	private Integer duracao;
 
 	@ManyToMany
-	@JoinTable(name = "curso_disciplina", joinColumns = { @JoinColumn(name = "curso_id") }, inverseJoinColumns = {
+	@JoinTable(name = "curso_disciplina", schema = "universidade", joinColumns = { @JoinColumn(name = "curso_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "disciplina_id") })
 	private List<Disciplina> disciplinas = new ArrayList<>();
 

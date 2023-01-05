@@ -13,10 +13,10 @@ import com.baccarin.universidade.vo.AlunoVO;
 @Repository
 public interface AlunoRepository extends JpaRepository<Aluno, Long> {
 
-	@Query(" select new com.baccarin.universidade.vo.AlunoVO(aluno.id, aluno.pessoa.nome) from Aluno a ")
+	@Query(" select new com.baccarin.universidade.vo.AlunoVO(aluno.id, aluno.nome) from Aluno aluno ")
 	List<AlunoVO> buscaListaAlunoVO();
 
-	@Query("select new com.baccarin.universidade.vo.AlunoVO(aluno.id, aluno.pessoa.nome) from Aluno a where a.id = :id")
+	@Query("select new com.baccarin.universidade.vo.AlunoVO(aluno.id, aluno.nome) from Aluno aluno where aluno.id = :id")
 	AlunoVO buscaAlunoVOById(@Param("id") Long id);
 
 }

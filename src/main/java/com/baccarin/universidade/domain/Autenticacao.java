@@ -32,6 +32,6 @@ public class Autenticacao {
 	@Column(name = "data_cadastro", nullable = false, updatable = false)
 	private LocalDate dataCadastro = LocalDate.now();
 	
-	@Column(name = "ativo", nullable = false, updatable = true, columnDefinition = "true")
-	private boolean ativo;
+	@Column(name = "ativo", nullable = false, updatable = true)
+	private boolean ativo = true;
 }

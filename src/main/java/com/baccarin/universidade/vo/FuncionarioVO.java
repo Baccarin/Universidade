@@ -7,13 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AlunoVO {
+public class FuncionarioVO {
 
-	private Long id;
-	private String nome;
+	private Long idFuncionario;
+	private Long idTipoFuncionario;
+	private String descricaoTipoFuncionario;
 	
-	public AlunoVO(Long id) {
-		this.id = id;
-	}
+	private String nome;
 
 }

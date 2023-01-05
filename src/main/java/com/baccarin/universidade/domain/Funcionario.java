@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "funcionario", schema = "universidade", uniqueConstraints = {})
-public class Funcionario {
+public class Funcionario extends Pessoa {
 
 	@Id
 	@GeneratedValue
@@ -27,6 +27,7 @@ public class Funcionario {
 	@JoinColumn(name = "tipo_funcionario_id")
 	private TipoFuncionario tipo;
 
-	@Column(name = "ativo", nullable = false, updatable = true, columnDefinition = "true")
-	private boolean ativo;
+	@Column(name = "ativo", nullable = false, updatable = true)
+	private boolean ativo = true;
+
 }

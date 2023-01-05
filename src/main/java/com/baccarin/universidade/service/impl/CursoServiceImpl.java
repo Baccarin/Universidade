@@ -12,11 +12,11 @@ import com.baccarin.universidade.service.CursoService;
 import com.baccarin.universidade.vo.CursoVO;
 
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Service
 @Transactional
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class CursoServiceImpl implements CursoService {
 
 	private final CursoRepository repository;

@@ -6,6 +6,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,5 +28,7 @@ public class Aluno extends Pessoa {
 	@Column(name = "data_matricula", nullable = true, updatable = false)
 	private LocalDate dataMatricula;
 
+	@OneToOne
+	@JoinColumn(name = "id_curso", nullable = false, unique = true)
 	private Curso curso;
 }

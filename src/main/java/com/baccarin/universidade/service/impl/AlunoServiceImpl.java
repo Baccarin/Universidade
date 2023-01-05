@@ -14,15 +14,14 @@ import com.baccarin.universidade.exceptions.RegistroNaoEncontradoException;
 import com.baccarin.universidade.repository.api.AlunoRepository;
 import com.baccarin.universidade.repository.api.SexoRepository;
 import com.baccarin.universidade.service.AlunoService;
-import com.baccarin.universidade.vo.AlunoVO;
 import com.baccarin.universidade.vo.AlunoCompletoVO;
+import com.baccarin.universidade.vo.AlunoVO;
 
-import lombok.RequiredArgsConstructor;
-import lombok.val;
+import lombok.AllArgsConstructor;
 
 @Service
 @Transactional
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class AlunoServiceImpl implements AlunoService {
 
 	private final AlunoRepository repository;

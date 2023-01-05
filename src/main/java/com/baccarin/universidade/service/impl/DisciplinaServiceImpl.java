@@ -15,11 +15,11 @@ import com.baccarin.universidade.service.DisciplinaService;
 import com.baccarin.universidade.vo.DisciplinaVO;
 
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Service
 @Transactional
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class DisciplinaServiceImpl implements DisciplinaService {
 
 	private final TurnoDisciplinaRepository turnoRepository;

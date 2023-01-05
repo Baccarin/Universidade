@@ -9,17 +9,20 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.baccarin.universidade.service.CursoService;
 import com.baccarin.universidade.vo.CursoVO;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Transactional
-@RestController("universidade/curso")
-@RequiredArgsConstructor
-public class CursoResource {
+@RestController
+@RequestMapping("universidade/curso")
+@AllArgsConstructor
+class CursoResource {
 
 	private final CursoService service;
 
